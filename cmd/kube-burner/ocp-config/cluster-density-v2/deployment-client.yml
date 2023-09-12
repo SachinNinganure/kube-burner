@@ -109,6 +109,10 @@ spec:
               fieldRef:
                 fieldPath: metadata.labels
       restartPolicy: Always
+      #Added tolerations
+      tolerations:
+      - key: "node-role.kubernetes.io/edge"
+        operator: "Exists"
+        effect: "NoSchedule"  
   strategy:
     type: RollingUpdate
-

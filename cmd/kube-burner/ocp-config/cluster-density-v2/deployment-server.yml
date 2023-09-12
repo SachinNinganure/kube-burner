@@ -97,3 +97,8 @@ spec:
             - path: "labels"
               fieldRef:
                 fieldPath: metadata.labels
+      #Added tolerations
+      tolerations:
+      - key: "node-role.kubernetes.io/edge"
+        operator: "Exists"
+        effect: "NoSchedule"          
